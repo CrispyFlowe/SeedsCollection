@@ -37,37 +37,9 @@ export class Types<T> {
     public static matchAtLeast() {}
     
 
-    public static signiture() {
-        
-    }
+    public static signiture() {}
 
-    public static getCases(): number {
-        return 0;
-    }
+    public static getCases() {}
 
-    public static overload(): number {
-        return 0;
-    }
+    public static overload() {}
 }
-
-
-function overloads(type: string, count: number): any;
-
-function overloads(type: string): any;
-
-function overloads(count: number): any;
-
-function overloads() {
-    if (Types.matches(arguments, ["string", "number"])) {
-        console.log("overload 1");
-    }
-
-    if (Types.matches(arguments, ["string"])) {
-        console.log("overload 2");
-    }
-
-    if (Types.matches(arguments, ["number"])) {
-        console.log("overload 3");
-    }
-}
-
