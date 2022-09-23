@@ -1,6 +1,6 @@
 /// <reference path = "./../base/copyright/License.ts" />
 
-import { Types } from "./../typing/types";
+import { Types } from "./../typing/Types";
 import { Graph, VerticalGraph } from "./Graph";
 
 
