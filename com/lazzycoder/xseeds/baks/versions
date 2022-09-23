@@ -1,0 +1,215 @@
+
+// @ts-nocheck
+
+/// seeds.typing.Types
+
+type PrimaryTypes = (
+    "bigint" | "boolean" | "string" | "number" | 
+    "function" | "object" | "symbol" | "undefined"
+);
+
+
+
+export class Types<T> {
+    public static matches(types: ArrayLike<any>, 
+                            customeTypes: (PrimaryTypes | Function | string[])[]): boolean {
+        if (types.length !== customeTypes.length)
+            return false;
+        for (let i = 0; i < customeTypes.length; ++i) {
+            if (typeof customeTypes[i] === "string") {
+                if (customeTypes[i] !== typeof types[i])
+                    return false;
+            } else {
+                /* typeof customeType is Function */
+                if (!(types[i] instanceof (customeTypes[i] as Function))) 
+                    /* if types[i] does not match customeType[i] */
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public static matchAtLeast() {}
+    
+
+    public static signiture() {
+        
+    }
+
+    public static getCases(): number {
+        return 0;
+    }
+}
+
+
+function overloads(type: string, count: number): any;
+
+function overloads(type: string): any;
+
+function overloads(count: number): any;
+
+function overloads() {
+    if (Types.matches(arguments, ["string", "number"])) {
+        console.log("overload 1");
+    }
+
+    if (Types.matches(arguments, ["string"])) {
+        console.log("overload 2");
+    }
+
+    if (Types.matches(arguments, ["number"])) {
+        console.log("overload 3");
+    }
+}
+
+
+
+overloads("");
+
+/// seeds.collection.LinkedQueue
+
+
+export class LinkedQueue<T> implements Queue<T> {
+
+    private elements: LinkedList<T> = new LinkedList<T>();
+
+    addFirst(element: T): boolean {
+        
+    }
+    addLast(element: T): boolean {
+        return this.elements.add(element);
+    }
+    peekFirst(): T | undefined {
+        return this.elements.get(0);
+    }
+    peekLast(): T | undefined {
+        return this.elements.getLast();
+    }
+    pollFirst(): T | undefined {
+        return this.elements.remove(0);
+    }
+    pollLast(): T | undefined {
+        return this.elements.remove(this.elements.length - 1);
+    }
+    get(index: number): T | undefined {
+        return this.elements.get(index);
+    }
+    remove(index: number): T | undefined {
+        return this.elements.remove(index);
+    }
+    get length(): number {
+        return this.elements.length;
+    }
+    
+}
+
+
+var a = new ArrayQueue<number>();
+a.addFirst(3);
+a.pollLast();
+
+
+/// seeds.collection.ParallelGraph 
+
+
+
+export class ParallelGraph<T> implements Graph<T> {
+
+    private readonly columnLen: number;
+
+    private elements: T[][];
+     
+    private size: number;
+
+    public constructor(columnLength: number);
+
+    public constructor(from: Graph<T> | ParallelGraph<T>);
+
+    public constructor() {
+        switch (arguments) {
+            case 0: {
+                this.columnLen = 30;
+                this.elements = [];
+                this.size = 0;
+                break;
+            }
+            case 1: {
+                var of: any = arguments[0];
+                switch (typeof arguments[0]) {
+                    case "number": {
+                        this.columnLen = (of as number);
+                        this.elements = [];
+                        this.size = 0;
+                        break;
+                    }
+                    case "object": {
+                        if (of instanceof ParallelGraph<T>) {
+                            this.columnLen = (of as ParallelGraph<T>).columnLen;
+                            this.elements = (of as ParallelGraph<T>).elements;
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+
+    toArray(): T[] {
+        throw new Error("Method not implemented.");
+    }
+
+    add(element: T): boolean {
+        throw new Error("Method not implemented.");
+    }
+
+    remove(index: number): T {
+        throw new Error("Method not implemented.");
+    }
+
+    get(r: number, c: number): T {
+        throw new Error("Method not implemented.");
+    }
+
+    getArray(specified: VerticalGraph): T[] {
+        throw new Error("Method not implemented.");
+    }
+
+    indexOf(element: T, specified?: VerticalGraph | undefined): number {
+        throw new Error("Method not implemented.");
+    }
+
+    includes(element: T, specified?: VerticalGraph | undefined): boolean {
+        throw new Error("Method not implemented.");
+    }
+
+    forEach(callbackfn: (element: T) => void, thisArg?: any): void {
+        throw new Error("Method not implemented.");
+    }
+
+    find(callbackfn: (e: T) => boolean | void, thisArg?: any): T {
+        throw new Error("Method not implemented.");
+    }
+    
+    some(callbackfn: (element: T) => boolean | void, thisArg?: any): boolean {
+        throw new Error("Method not implemented.");
+    }
+
+    every(callbackfn: (element: T) => boolean | void, thisArg?: any): boolean {
+        throw new Error("Method not implemented.");
+    }
+
+    get length(): number {
+        throw new Error("Method not implemented.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
