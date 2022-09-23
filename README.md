@@ -3,6 +3,8 @@
 SEEDS is a free open source project that creates a fully environment of data-structures, include but not limited to:
  - List
    - LinkedList
+   - HashList(Beta)
+   - TreeList(Beta)
  - Queue
    - ArrayQueue
    - LinkedQueue
