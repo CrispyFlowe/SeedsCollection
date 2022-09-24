@@ -705,6 +705,30 @@ class RedBlackTree<K, V> {
 /**
  * TreeDictionary
  * ---
+ * TreeDictionary is a collection, complex data structure, insert and
+ * find element by comparing each element. TreeDictionary use
+ * a RedBlackTree to implement. The best point of TreeDictionary is it
+ * Bring Time Complexity of O(log n) even
+ * at the worst case. 
+ * 
+ * The length of the list always less than max integer: 2billion,
+ * so the most time of loops is forever 33 times (base 2 log maxint)
+ * 
+ * @example
+ * Complexity: O(log n).
+ *       y                   x
+ *      / \                 / \
+ *     x  node   ====>   node  y
+ *   /  \                      / \
+ *  xx  yy                    xx yy
+ * 
+ * c(current) compare to root(x or y)
+ * > root: right
+ * < root: left
+ * 
+ * @author Cflower
+ * 
+ * @see Dictionary
  */
 export class TreeDictionary<K, V> implements Map<K, V> {
 
