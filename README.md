@@ -1,4 +1,4 @@
-# SeedsCollection For TypeScript
+# SeedsCollection For TypeScript 🌱
 
 SEEDS is a free open source project that creates a fully environment of data-structures, include but not limited to:
  - List
