@@ -8,8 +8,8 @@ SEEDS is a free open source project that creates a fully environment of data-str
  - Queue
    - ArrayQueue
    - LinkedQueue
- - Graph
-   - StraightGraph
+ - Coordinate
+   - StraightCoordinate
  - Stack
  - BiDictionary
  - RedBlackTree
