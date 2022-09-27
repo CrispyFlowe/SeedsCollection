@@ -34,7 +34,7 @@ type SpecifiedVertGraph = [number, number];
  * 
  * @template T
  */
-export interface Graph<T> extends AbstractCollection<T> {
+export interface Coordinate<T> extends AbstractCollection<T> {
     /**
      * Returns array contains full elements of graph
      */
