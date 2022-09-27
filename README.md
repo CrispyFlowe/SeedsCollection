@@ -10,6 +10,7 @@ SEEDS is a free open source project that creates a fully environment of data-str
    - LinkedQueue
  - Graph
    - StraightGraph
+ - Stack
  - BiDictionary
  - RedBlackTree
 
