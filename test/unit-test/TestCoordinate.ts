@@ -13,7 +13,7 @@ export interface VerticalGraph {
 
 type SpecifiedVertGraph = [number, number];
 
-export interface Graph<T> {
+export interface Coordinate<T> {
     toArray(): T[];
 
     add(element: T): boolean;
@@ -88,7 +88,7 @@ export class Types<T> {
     }
 }
 
-class StraightGraph<T> {
+class StraightCoordinate<T> {
 
     public static readonly REMOVED = {};
 
