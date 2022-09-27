@@ -9,7 +9,7 @@ function defined(obj: any) {
 }
 
 
-export class StraightGraph<T> implements Graph<T> {
+export class StraightCoordinate<T> implements Graph<T> {
 
     public static readonly REMOVED = {};
 
